@@ -93,7 +93,8 @@
     .sequence-grid { grid-template-columns: 1fr; }
 }
 
-.card ul {
-    white-space: nowrap;
-    overflow-wrap: normal;
+.card ul { white-space: normal; }
+
+@media (min-width: 1201px) {
+    .card ul { white-space: nowrap; }
 }
