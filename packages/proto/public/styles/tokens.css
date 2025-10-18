@@ -1,0 +1,32 @@
+:root {
+    /* backgrounds */
+    --color-background-page: #DDD5D0;   /* timberwolf */
+    --color-background-header: #586F6B; /* feldgrau */
+    --color-surface: #FFFFFF;           /* cards/sections */
+    --color-benday: #CFC0BD;            /* soft panel bg */
+
+    /* text */
+    --color-text: #111111;              /* body text on light bg */
+    --color-text-inverted: #FFFFFF;     /* on header */
+    --color-text-muted: #4A4A4A;        /* accessible muted (≥4.5:1) */
+    --color-header-title: #EAE8E6;
+
+    /* accents */
+    --color-accent: #2F3E3B;            /* accessible link color */
+    --color-accent-strong: #2E3A37;     /* hover/active (a hair darker) */
+    --color-accent-weak: #B8B8AA;       /* subtle highlights/badges */
+    --color-accent-visited: #445753;
+
+    /* borders */
+    --color-border: #B8B8AA;
+
+    --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2rem;
+    --radius-md: 12px;
+    --shadow-sm: 0 1px 2px rgba(16,24,40,.06), 0 1px 1px rgba(16,24,40,.04);
+
+    --font-family-base: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,
+    "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --font-size-base: 1rem; --font-size-sm: .875rem; --font-size-lg: 1.25rem; --font-size-xl: 1.75rem;
+    --line-height-base: 1.6; --line-height-heading: 1.25;
+    --content-max-width: 960px;
+}
