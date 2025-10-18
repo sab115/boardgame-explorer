@@ -4,78 +4,113 @@
     <meta charset="UTF-8" />
     <title>Board Game Explorer</title>
 
+    <link rel="stylesheet" href="/styles/reset.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
 
 </head>
 <body>
-<header>
-    <h1>Board Game Explorer</h1>
+
+<header class="site-header">
+    <div class="brand">
+        <h1>Board Game Explorer</h1>
+    </div>
+    <nav aria-label="Primary">
+        <ul>
+            <li><a href="games/index.html">Games</a></li>
+            <li><a href="categories/index.html">Categories</a></li>
+            <li><a href="mechanics/index.html">Mechanics</a></li>
+            <li><a href="designers/index.html">Designers</a></li>
+            <li><a href="publishers/index.html">Publishers</a></li>
+            <li><a href="expansions/index.html">Expansions</a></li>
+        </ul>
+    </nav>
 </header>
+
 <main>
-    <section>
-        <h2>
-            <svg class="icon"><use href="/icons/boardgame.svg#icon-dice" /></svg>
-            Games
-        </h2>
-        <ul>
-            <li><a href="games/index.html">Browse All Games</a></li>
-        </ul>
-    </section>
+    <div class="page-grid">
 
-    <section>
-        <h2>
-            <svg class="icon"><use href="/icons/boardgame.svg#icon-cards" /></svg>
-            Categories
-        </h2>
-        <ul>
-            <li><a href="categories/index.html">Browse All Categories</a></li>
-        </ul>
-    </section>
+        <section class="card span-6">
+            <h2>
 
-    <section>
-        <h2>
-            <svg class="icon"><use href="/icons/boardgame.svg#icon-board" /></svg>
-            Mechanics
-        </h2>
-        <ul>
-            <li><a href="mechanics/index.html">Browse All Mechanics</a></li>
-        </ul>
-    </section>
+                <svg class="icon" width="22" height="22" aria-hidden="true" focusable="false">
+                    <use href="/icons/boardgame.svg#icon-dice" />
+                </svg>
+                Games
+            </h2>
+            <ul class="sequence-grid">
+                <li><a href="games/index.html">Browse All Games</a></li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>
-            <svg class="icon"><use href="/icons/boardgame.svg#icon-meeple" /></svg>
-            Designers
-        </h2>
-        <ul>
-            <li><a href="designers/index.html">Browse All Designers</a></li>
-        </ul>
-    </section>
+        <section class="card span-6">
+            <h2>
+                <svg class="icon" width="22" height="22" aria-hidden="true" focusable="false">
+                    <use href="/icons/boardgame.svg#icon-cards" />
+                </svg>
+                Categories
+            </h2>
+            <ul class="sequence-grid">
+                <li><a href="categories/index.html">Browse All Categories</a></li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>
-            <svg class="icon"><use href="/icons/boardgame.svg#icon-publisher" /></svg>
-            Publishers
-        </h2>
-        <ul>
-            <li><a href="publishers/index.html">Browse All Publishers</a></li>
-        </ul>
-    </section>
+        <section class="card span-4">
+            <h2>
+                <svg class="icon" width="22" height="22" aria-hidden="true" focusable="false">
+                    <use href="/icons/boardgame.svg#icon-board" />
+                </svg>
+                Mechanics
+            </h2>
+            <ul class="sequence-grid">
+                <li><a href="mechanics/index.html">Browse All Mechanics</a></li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>
-            <svg class="icon"><use href="/icons/boardgame.svg#icon-expansion" /></svg>
-            Expansions
-        </h2>
-        <ul>
-            <li><a href="expansions/index.html">See All Expansions</a></li>
-        </ul>
-    </section>
+        <section class="card span-4">
+            <h2>
+                <svg class="icon" width="22" height="22" aria-hidden="true" focusable="false">
+                    <use href="/icons/boardgame.svg#icon-meeple" />
+                </svg>
+                Designers
+            </h2>
+            <ul class="sequence-grid">
+                <li><a href="designers/index.html">Browse All Designers</a></li>
+            </ul>
+        </section>
+
+        <section class="card span-4">
+            <h2>
+                <svg class="icon" width="22" height="22" aria-hidden="true" focusable="false">
+                    <use href="/icons/boardgame.svg#icon-publisher" />
+                </svg>
+                Publishers
+            </h2>
+            <ul class="sequence-grid">
+                <li><a href="publishers/index.html">Browse All Publishers</a></li>
+            </ul>
+        </section>
+
+        <section class="card span-12">
+            <h2>
+                <svg class="icon" width="22" height="22" aria-hidden="true" focusable="false">
+                    <use href="/icons/boardgame.svg#icon-expansion" />
+                </svg>
+                Expansions
+            </h2>
+            <ul class="sequence-inline">
+                <li><a href="expansions/index.html">See All Expansions</a></li>
+            </ul>
+        </section>
+
+    </div>
 </main>
+
 </body>
 </html>
