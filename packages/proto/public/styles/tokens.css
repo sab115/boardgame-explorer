@@ -30,3 +30,19 @@
     --line-height-base: 1.6; --line-height-heading: 1.25;
     --content-max-width: 960px;
 }
+
+body.dark-mode {
+    --color-background-page: #2C2C2A;
+    --color-background-header: #333532;
+    --color-surface: #3A3937;
+    --color-text: #EAE8E6;
+    --color-text-inverted: #FAFAFA;
+    --color-text-muted: #A8B4A7;
+    --color-accent: #D6A95E;
+    --color-accent-strong: #E5BB73;
+    --color-border: #55554C;
+}
+
+html, body {
+    transition: background-color .2s ease, color .2s ease;
+}
