@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Board Game Explorer</title>
+
+    <link rel="stylesheet" href="/public/styles/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/styles/tokens.css" />
+    <link rel="stylesheet" href="/public/styles/page.css" />
+    <link rel="stylesheet" href="/public/styles/layout.css" />
+    <script type="module" src="/public/scripts/darkmode.js" defer></script>
+
+    <script type="module">
+        import { define } from "@calpoly/mustang";
+        import { BgxCard } from "/src/bgx-card.ts";
+        define({ "bgx-card": BgxCard });
+    </script>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="brand">
+        <h1>Board Game Explorer</h1>
+    </div>
+    <label class="theme-toggle">
+        <input id="dark-toggle" type="checkbox" autocomplete="off" />
+        Dark mode
+    </label>
+    <nav aria-label="Primary">
+        <ul>
+            <li><a href="public/games/index.html">Games</a></li>
+            <li><a href="public/categories/index.html">Categories</a></li>
+            <li><a href="public/mechanics/index.html">Mechanics</a></li>
+            <li><a href="public/designers/index.html">Designers</a></li>
+            <li><a href="public/publishers/index.html">Publishers</a></li>
+            <li><a href="public/expansions/index.html">Expansions</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="page-grid">
+        <bgx-card
+                class="span-6"
+                icon-ref="/public/icons/boardgame.svg#icon-dice">
+            <span slot="title">Games</span>
+            <li><a href="public/games/index.html">Browse All Games</a></li>
+        </bgx-card>
+        <bgx-card
+                class="span-6"
+                icon-ref="/public/icons/boardgame.svg#icon-cards">
+            <span slot="title">Categories</span>
+            <li><a href="public/categories/index.html">Browse All Categories</a></li>
+        </bgx-card>
+        <bgx-card
+                class="span-4"
+                icon-ref="/public/icons/boardgame.svg#icon-board">
+            <span slot="title">Mechanics</span>
+            <li><a href="public/mechanics/index.html">Browse All Mechanics</a></li>
+        </bgx-card>
+        <bgx-card
+                class="span-4"
+                icon-ref="/public/icons/boardgame.svg#icon-meeple">
+            <span slot="title">Designers</span>
+            <li><a href="public/designers/index.html">Browse All Designers</a></li>
+        </bgx-card>
+        <bgx-card
+                class="span-4"
+                icon-ref="/public/icons/boardgame.svg#icon-publisher">
+            <span slot="title">Publishers</span>
+            <li><a href="public/publishers/index.html">Browse All Publishers</a></li>
+        </bgx-card>
+        <bgx-card
+                class="span-12"
+                icon-ref="/public/icons/boardgame.svg#icon-expansion">
+            <span slot="title">Expansions</span>
+            <li><a href="public/expansions/index.html">See All Expansions</a></li>
+        </bgx-card>
+    </div>
+</main>
+
+</body>
+</html>
