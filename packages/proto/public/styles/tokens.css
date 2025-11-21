@@ -29,6 +29,12 @@
 
     --line-height-base: 1.6; --line-height-heading: 1.25;
     --content-max-width: 960px;
+
+    /* font sizes */
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
 }
 
 body.dark-mode {
