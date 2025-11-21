@@ -43,44 +43,7 @@
 </header>
 
 <main>
-    <div class="page-grid">
-        <bgx-card
-                class="span-6"
-                icon-ref="/icons/boardgame.svg#icon-dice">
-            <span slot="title">Games</span>
-            <li><a href="/games/index.html">Browse All Games</a></li>
-        </bgx-card>
-        <bgx-card
-                class="span-6"
-                icon-ref="/icons/boardgame.svg#icon-cards">
-            <span slot="title">Categories</span>
-            <li><a href="/categories/index.html">Browse All Categories</a></li>
-        </bgx-card>
-        <bgx-card
-                class="span-4"
-                icon-ref="/icons/boardgame.svg#icon-board">
-            <span slot="title">Mechanics</span>
-            <li><a href="/mechanics/index.html">Browse All Mechanics</a></li>
-        </bgx-card>
-        <bgx-card
-                class="span-4"
-                icon-ref="/icons/boardgame.svg#icon-meeple">
-            <span slot="title">Designers</span>
-            <li><a href="/designers/index.html">Browse All Designers</a></li>
-        </bgx-card>
-        <bgx-card
-                class="span-4"
-                icon-ref="/icons/boardgame.svg#icon-publisher">
-            <span slot="title">Publishers</span>
-            <li><a href="/publishers/index.html">Browse All Publishers</a></li>
-        </bgx-card>
-        <bgx-card
-                class="span-12"
-                icon-ref="/icons/boardgame.svg#icon-expansion">
-            <span slot="title">Expansions</span>
-            <li><a href="/expansions/index.html">See All Expansions</a></li>
-        </bgx-card>
-    </div>
+    <bgx-dashboard src="/data/cards.json"></bgx-dashboard>
 </main>
 
 </body>

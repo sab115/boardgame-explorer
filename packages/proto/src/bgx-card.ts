@@ -1,4 +1,3 @@
-// src/bgx-card.ts
 import { LitElement, css, html } from "lit";
 import { property } from "lit/decorators.js";
 import reset from "./styles/reset.css.ts";

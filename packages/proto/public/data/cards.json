@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Games",
+    "icon": "dice",
+    "href": "/games/index.html",
+    "linkLabel": "Browse All Games",
+    "span": "6"
+  },
+  {
+    "title": "Categories",
+    "icon": "cards",
+    "href": "/categories/index.html",
+    "linkLabel": "Browse All Categories",
+    "span": "6"
+  },
+  {
+    "title": "Mechanics",
+    "icon": "board",
+    "href": "/mechanics/index.html",
+    "linkLabel": "Browse All Mechanics",
+    "span": "4"
+  },
+  {
+    "title": "Designers",
+    "icon": "meeple",
+    "href": "/designers/index.html",
+    "linkLabel": "Browse All Designers",
+    "span": "4"
+  },
+  {
+    "title": "Publishers",
+    "icon": "publisher",
+    "href": "/publishers/index.html",
+    "linkLabel": "Browse All Publishers",
+    "span": "4"
+  },
+  {
+    "title": "Expansions",
+    "icon": "expansion",
+    "href": "/expansions/index.html",
+    "linkLabel": "See All Expansions",
+    "span": "12"
+  }
+]
