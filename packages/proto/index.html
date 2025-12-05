@@ -16,10 +16,12 @@
         import { define, Auth } from "@calpoly/mustang";
         import { BgxCard } from "/src/bgx-card.ts";
         import { BgxDashboard } from "/src/bgx-dashboard.ts";
+        import { BgxHeader } from "/src/bgx-header.ts";
 
         define({
             "bgx-card": BgxCard,
             "bgx-dashboard": BgxDashboard,
+            "bgx-header": BgxHeader,
             "mu-auth": Auth.Provider
         });
     </script>
@@ -28,25 +30,7 @@
 <body>
 
 <mu-auth provides="bgx:auth">
-    <header class="site-header">
-        <div class="brand">
-            <h1>Board Game Explorer</h1>
-        </div>
-        <label class="theme-toggle">
-            <input id="dark-toggle" type="checkbox" autocomplete="off" />
-            Dark mode
-        </label>
-        <nav aria-label="Primary">
-            <ul>
-                <li><a href="/games/index.html">Games</a></li>
-                <li><a href="/categories/index.html">Categories</a></li>
-                <li><a href="/mechanics/index.html">Mechanics</a></li>
-                <li><a href="/designers/index.html">Designers</a></li>
-                <li><a href="/publishers/index.html">Publishers</a></li>
-                <li><a href="/expansions/index.html">Expansions</a></li>
-            </ul>
-        </nav>
-    </header>
+    <bgx-header></bgx-header>
 
     <main>
         <bgx-dashboard src="/api/cards"></bgx-dashboard>
