@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
 import Cards from "./services/card-svc";
 import cardsRouter from "./routes/cards";
+import auth, { authenticateUser } from "./routes/auth";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,7 +13,8 @@ connect("Cluster0");
 app.use(express.static(staticDir));
 app.use(express.json());
 
-app.use("/api/cards", cardsRouter);
+app.use("/api/cards", authenticateUser, cardsRouter);
+app.use("/auth", auth);
 
 app.get("/hello", (_req: Request, res: Response) => {
     res.send("Hello, World");
