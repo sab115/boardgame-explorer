@@ -29,11 +29,11 @@ export class BgxHeader extends LitElement {
         return html`
             <header class="site-header">
                 <div class="brand">
-                    <a href="/">
+                    <a href="/app">
                         <h1>Board Game Explorer</h1>
                     </a>
                 </div>
-                
+
                 <label class="theme-toggle">
                     <input id="dark-toggle" type="checkbox" autocomplete="off" />
                     Dark mode
@@ -42,9 +42,12 @@ export class BgxHeader extends LitElement {
                 <nav aria-label="Primary">
                     <ul>
                         <li><a href="/app">Dashboard</a></li>
+                        <li><a href="/app/games">Games</a></li>
+                        <li><a href="/app/categories">Categories</a></li>
+                        <li><a href="/app/mechanics">Mechanics</a></li>
                     </ul>
                 </nav>
-                
+
                 <div class="auth-controls">
                     ${this.loggedIn ? this.renderSignedIn() : this.renderSignedOut()}
                 </div>

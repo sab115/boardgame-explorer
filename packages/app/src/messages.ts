@@ -1,9 +1,7 @@
-import { Card, Game } from "server/models";
+import {Card, Game} from "server/models";
 
 export type Msg =
-    | ["cards/load", { cards: Card[] }]
     | ["cards/request", {}]
-    | ["game/load", { game: Game }]
     | ["game/request", { gameId: string }]
     | ["game/save", {
     gameId: string;
@@ -11,4 +9,9 @@ export type Msg =
 }, {
     onSuccess?: () => void;
     onFailure?: (err: Error) => void;
-}];
+}]
+    | Cmd;
+
+type Cmd =
+    | ["cards/load", { cards: Card[] }]
+    | ["game/load", { game: Game }];

@@ -1,9 +1,12 @@
-import { Auth, define, History, Store, Switch, Form } from "@calpoly/mustang";
+import { Auth, define, History, Switch, Store, Form } from "@calpoly/mustang";
 import { html } from "lit";
 import { BgxHeader } from "./components/bgx-header";
 import { HomeViewElement } from "./views/home-view";
 import { GameViewElement } from "./views/game-view";
 import { GameEditElement } from "./views/game-edit";
+import { GamesViewElement } from "./views/games-view";
+import { CategoriesViewElement } from "./views/categories-view";
+import { MechanicsViewElement } from "./views/mechanics-view";
 import { BgxDashboard } from "./components/bgx-dashboard";
 import { BgxCard } from "./components/bgx-card";
 import { Msg } from "./messages";
@@ -22,6 +25,18 @@ const routes = [
         view: (params: Switch.Params) => html`
             <game-view game-id=${params.id}></game-view>
         `
+    },
+    {
+        path: "/app/games",
+        view: () => html`<games-view></games-view>`
+    },
+    {
+        path: "/app/categories",
+        view: () => html`<categories-view></categories-view>`
+    },
+    {
+        path: "/app/mechanics",
+        view: () => html`<mechanics-view></mechanics-view>`
     },
     {
         path: "/app",
@@ -55,6 +70,9 @@ define({
     "home-view": HomeViewElement,
     "game-view": GameViewElement,
     "game-edit": GameEditElement,
+    "games-view": GamesViewElement,
+    "categories-view": CategoriesViewElement,
+    "mechanics-view": MechanicsViewElement,
     "bgx-dashboard": BgxDashboard,
     "bgx-card": BgxCard
 });

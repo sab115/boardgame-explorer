@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
-import Cards from "./services/card-svc";
 import cardsRouter from "./routes/cards";
+import gamesRouter from "./routes/games";
 import auth, { authenticateUser } from "./routes/auth";
 import fs from "node:fs/promises";
 import path from "path";
@@ -15,7 +15,13 @@ connect("Cluster0");
 app.use(express.static(staticDir));
 app.use(express.json());
 
+app.use((req, _res, next) => {
+    console.log(`${req.method} ${req.path}`);
+    next();
+});
+
 app.use("/api/cards", authenticateUser, cardsRouter);
+app.use("/api/games", authenticateUser, gamesRouter);
 app.use("/auth", auth);
 
 app.get("/hello", (_req: Request, res: Response) => {

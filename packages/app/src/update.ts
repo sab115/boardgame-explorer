@@ -8,7 +8,6 @@ export default function update(
     model: Model,
     user: Auth.User
 ) {
-    console.log("UPDATE received message:", message[0]);
     const [command, payload, callbacks] = message;
 
     switch (command) {
@@ -24,14 +23,12 @@ export default function update(
 
         case "game/request":
             const { gameId } = payload;
-            console.log("Handling game/request for:", gameId);
             return [
                 model,
                 fetchGame(gameId, user)
             ] as [Model, Promise<Msg>];
 
         case "game/load":
-            console.log("Handling game/load (Data arrived!)");
             return { ...model, game: payload.game };
 
         case "game/save": {
@@ -62,51 +59,36 @@ function fetchCards(user: Auth.User): Promise<Msg> {
     })
         .then((response: Response) => {
             if (response.status === 200) return response.json();
-            throw `Server error: ${response.status}`;
+            throw new Error(`Server error: ${response.status}`);
         })
         .then((json: unknown) => {
             if (json) return ["cards/load", { cards: json as Card[] }] as Msg;
             throw new Error("Parse error");
         })
         .catch((err) => {
-            console.log("Fetch failed:", err);
+            console.error("Fetch failed:", err);
             throw err;
         });
 }
 
 function fetchGame(gameId: string, user: Auth.User): Promise<Msg> {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(["game/load", {
-                game: {
-                    _id: gameId,
-                    title: `Game: ${gameId}`,
-                    players: "2-4",
-                    playTime: "30-60 min",
-                    category: "Family Strategy",
-                    mechanic: "Route Building",
-                    designer: "Alan R. Moon",
-                    publisher: "Days of Wonder",
-                    expansions: []
-                }
-            }] as Msg);
-        }, 500);
-    });
+    return fetch(`/api/games/${gameId}`, {
+        headers: Auth.headers(user)
+    })
+        .then((response: Response) => {
+            if (response.status === 200) return response.json();
+            throw new Error(`Failed to fetch game: ${response.status}`);
+        })
+        .then((json: unknown) => {
+            if (json) return ["game/load", { game: json as Game }] as Msg;
+            throw new Error("No JSON in response from server");
+        });
 }
 
 function saveGame(
     msg: { gameId: string; game: Game },
     user: Auth.User
 ): Promise<Game> {
-    console.log("Saving game:", msg.game);
-
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(msg.game);
-        }, 500);
-    });
-
-    /*
     return fetch(`/api/games/${msg.gameId}`, {
         method: "PUT",
         headers: {
@@ -123,5 +105,4 @@ function saveGame(
             if (json) return json as Game;
             throw new Error("No JSON in API response");
         });
-    */
 }

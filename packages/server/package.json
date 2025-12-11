@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "nodemon",
     "build": "npx etsc",
+    "seed": "npx etsc && node dist/seed-data.js",
     "start": "npm run build && npm run start:node",
     "start:api": "cross-env STATIC=./public npm run start",
     "start:app": "cross-env STATIC=../app/dist npm run start",
