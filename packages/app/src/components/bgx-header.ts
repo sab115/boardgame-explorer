@@ -38,15 +38,10 @@ export class BgxHeader extends LitElement {
                     <input id="dark-toggle" type="checkbox" autocomplete="off" />
                     Dark mode
                 </label>
-                
+
                 <nav aria-label="Primary">
                     <ul>
-                        <li><a href="/games/index.html">Games</a></li>
-                        <li><a href="/categories/index.html">Categories</a></li>
-                        <li><a href="/mechanics/index.html">Mechanics</a></li>
-                        <li><a href="/designers/index.html">Designers</a></li>
-                        <li><a href="/publishers/index.html">Publishers</a></li>
-                        <li><a href="/expansions/index.html">Expansions</a></li>
+                        <li><a href="/app">Dashboard</a></li>
                     </ul>
                 </nav>
                 
