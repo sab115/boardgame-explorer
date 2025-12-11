@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Register - Board Game Explorer</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+
+    <script type="module">
+        import { define, Auth } from "@calpoly/mustang";
+        import { RegisterFormElement } from "/src/auth/register-form.ts";
+
+        define({
+            "mu-auth": Auth.Provider,
+            "register-form": RegisterFormElement
+        });
+    </script>
+
+    <style>
+        .card {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: var(--color-accent);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        label span {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: var(--color-accent-strong);
+        }
+
+        button:disabled {
+            background: var(--color-text-muted);
+            cursor: not-allowed;
+        }
+
+        .error {
+            color: red;
+            margin-top: 1rem;
+        }
+
+        p {
+            margin-top: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<mu-auth>
+    <main class="card">
+        <h2>Create Account</h2>
+        <register-form api="/auth/register">
+            <label>
+                <span>Username:</span>
+                <input name="username" autocomplete="off" required />
+            </label>
+            <label>
+                <span>Password:</span>
+                <input type="password" name="password" required />
+            </label>
+        </register-form>
+        <p>
+            Already have an account?
+            <a href="/login.html">Sign in</a>
+        </p>
+    </main>
+</mu-auth>
+</body>
+</html>

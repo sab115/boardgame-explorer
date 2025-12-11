@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Board Game Explorer</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet">
+
+    <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+<mu-history provides="bgx:history">
+    <mu-auth provides="bgx:auth" redirect="/login.html">
+        <mu-store provides="bgx:model">
+            <bgx-header></bgx-header>
+            <main>
+                <mu-switch></mu-switch>
+            </main>
+        </mu-store>
+    </mu-auth>
+</mu-history>
+</body>
+</html>
