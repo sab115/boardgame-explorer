@@ -3,7 +3,7 @@ import Games from "../services/games-svc";
 import { Game } from "../models";
 
 const router = express.Router();
-
+console.log("Games router loaded");
 // GET /api/games (collection)
 router.get("/", (_req: Request, res: Response) => {
     console.log("GET /api/games called");

@@ -20,6 +20,7 @@ app.use((req, _res, next) => {
     next();
 });
 
+// Mount routes
 app.use("/api/cards", authenticateUser, cardsRouter);
 app.use("/api/games", authenticateUser, gamesRouter);
 app.use("/auth", auth);
@@ -44,4 +45,8 @@ app.use("/app", (req: Request, res: Response) => {
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
+    console.log("Registered routes:");
+    console.log("  /api/cards");
+    console.log("  /api/games");
+    console.log("  /auth");
 });

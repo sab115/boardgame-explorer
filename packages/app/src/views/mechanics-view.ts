@@ -22,10 +22,12 @@ export class MechanicsViewElement extends LitElement {
                 <main>
                     <div class="mechanics-grid">
                         ${this.mechanics.map(mech => html`
-                            <article class="mechanic-card">
-                                <h2>${mech.name}</h2>
-                                <p>${mech.count} game${mech.count !== 1 ? 's' : ''}</p>
-                            </article>
+                            <a href="/app/mechanics/${mech.id}" class="mechanic-card-link">
+                                <article class="mechanic-card">
+                                    <h2>${mech.name}</h2>
+                                    <p>${mech.count} game${mech.count !== 1 ? 's' : ''}</p>
+                                </article>
+                            </a>
                         `)}
                     </div>
                 </main>
@@ -38,37 +40,49 @@ export class MechanicsViewElement extends LitElement {
             display: block;
             padding: var(--space-4);
         }
-        
+
         header {
             border-bottom: 4px solid var(--color-accent);
             margin-bottom: var(--space-3);
         }
-        
+
         h1 {
             margin: 0;
             color: var(--color-accent);
         }
-        
+
         .mechanics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: var(--space-2);
         }
-        
+
+        .mechanic-card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
         .mechanic-card {
             background: var(--color-surface);
             border: 1px solid var(--color-border);
             border-radius: var(--radius-md);
             padding: var(--space-3);
             box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
-        
+
+        .mechanic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
         .mechanic-card h2 {
             margin: 0 0 0.5rem;
             color: var(--color-accent);
             font-size: 1.25rem;
         }
-        
+
         p {
             margin: 0;
             color: var(--color-text-muted);
