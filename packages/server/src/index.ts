@@ -36,6 +36,22 @@ app.get("/api/health", (_req, res) => {
     });
 });
 
+app.get("/login.html", (req: Request, res: Response) => {
+    const loginHtml = path.resolve(staticDir, "login.html");
+    fs.readFile(loginHtml, { encoding: "utf8" })
+        .then((html) => res.send(html))
+        .catch(() => res.status(404).send("Login page not found"));
+});
+
+
+app.get("/register.html", (req: Request, res: Response) => {
+    const registerHtml = path.resolve(staticDir, "register.html");
+    fs.readFile(registerHtml, { encoding: "utf8" })
+        .then((html) => res.send(html))
+        .catch(() => res.status(404).send("Register page not found"));
+});
+
+// Serve index.html for all /app/* routes (SPA routing)
 app.use("/app", (req: Request, res: Response) => {
     const indexHtml = path.resolve(staticDir, "index.html");
     fs.readFile(indexHtml, { encoding: "utf8" }).then((html) =>
@@ -49,4 +65,6 @@ app.listen(port, () => {
     console.log("  /api/cards");
     console.log("  /api/games");
     console.log("  /auth");
+    console.log("  /login.html");
+    console.log("  /register.html");
 });
